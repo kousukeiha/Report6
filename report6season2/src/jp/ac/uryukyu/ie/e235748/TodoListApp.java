@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TodoListApp {
     private ArrayList<Task>tasks;//タスクのリスト
-    private Scanner scanner;//ユーザー入力を受け取る
+    public Scanner scanner;//ユーザー入力を受け取る
 
     public TodoListApp(){
         tasks = new ArrayList<>();
@@ -21,25 +21,26 @@ public class TodoListApp {
     //タスクを表示するメソッド
     public void showTasks(){
         if(tasks.isEmpty()){
+            //もしタスクが空の場合
             System.out.println("タスクはありません");
         }else{
-            System.out.println("タスク一覧:");
+            System.out.println("\nタスク一覧:");
             for (int i = 0; i < tasks.size(); i++){
                 Task task = tasks.get(i);
-                System.out.println((i + 1) + "." + task.getName() + " - 完了:" + task.isCompleted());
+                System.out.println((i + 1) + "." + task.getName() + " \n- 完了:" + task.isCompleted());
             }
         }
     }
-    
 
-    //タスクを完了状態にするメソッド
-    public void completeTask(int index){
+    //タスクを削除するメソッド
+    public void removeTask(int index){
         if (index >= 0 && index < tasks.size()){
-            Task task = tasks.get(index);
-            task.complete();
-            System.out.println("タスクを完了しました:" + task.getName());
-        }else{
-            System.out.println("無効なインデックスです");
+            //タスクの番号があった場あお
+            Task removedTask = tasks.remove(index);
+            System.out.println("タスクを削除しました:" + removedTask.getName());
+        } else{
+            //タスクの番号がない場合
+            System.out.println("この番号のタスクはありません。");
         }
     }
 
