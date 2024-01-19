@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TodoListApp {
-    private ArrayList<Task>tasks;//タスクのリスト
+    ArrayList<Task>tasks;//タスクのリスト
     public Scanner scanner;//ユーザー入力を受け取る
 
     public TodoListApp(){
@@ -27,7 +27,7 @@ public class TodoListApp {
             System.out.println("\nタスク一覧:");
             for (int i = 0; i < tasks.size(); i++){
                 Task task = tasks.get(i);
-                System.out.println((i + 1) + "." + task.getName() + " \n- 完了:" + task.isCompleted());
+                System.out.println((i + 1) + "." + task.getName()); 
             }
         }
     }
@@ -35,7 +35,7 @@ public class TodoListApp {
     //タスクを削除するメソッド
     public void removeTask(int index){
         if (index >= 0 && index < tasks.size()){
-            //タスクの番号があった場あお
+            //タスクの番号があった場
             Task removedTask = tasks.remove(index);
             System.out.println("タスクを削除しました:" + removedTask.getName());
         } else{

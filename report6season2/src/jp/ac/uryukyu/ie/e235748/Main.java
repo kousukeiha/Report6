@@ -8,7 +8,7 @@ public class Main {
         
 
         while(!exit){
-            System.out.println("\n 番号を選択してください");
+            System.out.println("\n番号を選択してください");
             System.out.println("①.タスク追加");
             System.out.println("②.タスク一覧表示");
             System.out.println("③.終了");
