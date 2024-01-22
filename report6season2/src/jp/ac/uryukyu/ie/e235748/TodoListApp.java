@@ -35,7 +35,7 @@ public class TodoListApp {
     //タスクを削除するメソッド
     public void removeTask(int index){
         if (index >= 0 && index < tasks.size()){
-            //タスクの番号があった場
+            //タスクの番号があった場合
             Task removedTask = tasks.remove(index);
             System.out.println("タスクを削除しました:" + removedTask.getName());
         } else{

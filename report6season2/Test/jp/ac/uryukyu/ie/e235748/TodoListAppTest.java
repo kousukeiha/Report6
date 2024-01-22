@@ -15,11 +15,6 @@ public class TodoListAppTest {
     private ByteArrayOutputStream testOut;
     private TodoListApp todoListApp;
 
-    /*private void assertEquals(Object Object) {
-        throw new UnsupportedOperationException("Unimplemented method 'assertEquals'");
-    }*/
-
-
     @Before
     public void setUp(){
         ///System.inとSystem.outをテストのために設定
@@ -69,7 +64,6 @@ public class TodoListAppTest {
 
         //出力をキャプチャするためにSystem.outをリダイレクト
         System.setOut(new PrintStream(testOut));
-
         todoListApp.showTasks();
         Assert.assertEquals("新しいタスクを追加しました:Task 1\n\nタスク一覧:\n1.Task 1\n",testOut.toString());
     }
@@ -84,10 +78,8 @@ public class TodoListAppTest {
 
         //タスクが正しく追加されたことを確認
         Assert.assertEquals(2,todoListApp.tasks.size());
-
         //タスクを削除する
         todoListApp.removeTask(0);
-
         //タスクが正しく削除されたことを確認
         Assert.assertEquals(1,todoListApp.tasks.size());
     }
